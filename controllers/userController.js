@@ -1,8 +1,8 @@
-import asynchandler from "express-async-handler";
+import asynchandler from "../middleware/asyncHandler.js";
 import User from "../models/userModel.js";
 import validator from "validator";
 import generateToken from "../utils/generateToken.js";
-import { use } from "react";
+
 import { json } from "express";
 
 const authUser = asynchandler(async (req, res) => {
