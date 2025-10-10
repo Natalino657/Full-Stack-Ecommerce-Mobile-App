@@ -8,6 +8,8 @@ import { json } from "express";
 const authUser = asynchandler(async (req, res) => {
   const { email, password } = req.body;
 
+  const user = await User.findOne({ email });
+
   if (User && (await user.matchPassword(password))) {
     generateToken(res, user._id);
 
